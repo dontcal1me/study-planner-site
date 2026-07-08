@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>스터디 플래너</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    color: #1e293b;
+    margin: 0;
+  }
+  .sheet {
+    width: 100%;
+  }
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 3px solid #1e293b;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .top-row h1 {
+    font-size: 22px;
+    margin: 0;
+  }
+  .week-field {
+    font-size: 13px;
+    color: #475569;
+  }
+  .goal-line {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  table.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  table.timetable th,
+  table.timetable td {
+    border: 1px solid #cbd5e1;
+    height: 26px;
+    font-size: 11px;
+    text-align: center;
+  }
+  table.timetable th {
+    background: #f1f5f9;
+  }
+  .bottom-row {
+    display: flex;
+    gap: 20px;
+  }
+  .checklist, .memo {
+    flex: 1;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .checklist h2, .memo h2 {
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+  .checklist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .checklist li {
+    font-size: 12px;
+    border-bottom: 1px dotted #cbd5e1;
+    padding: 6px 0;
+  }
+  .checklist li::before {
+    content: "☐ ";
+  }
+  .memo .lines div {
+    border-bottom: 1px dotted #cbd5e1;
+    height: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top-row">
+      <h1>WEEKLY STUDY PLANNER</h1>
+      <div class="week-field">월 ____ 일 ~ ____ 일 (____주차)</div>
+    </div>
+
+    <div class="goal-line">이번 주 목표: ______________________________________________</div>
+
+    <table class="timetable">
+      <thead>
+        <tr>
+          <th style="width:8%">시간</th>
+          <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          document.write(
+            Array.from({length: 12}, (_, i) => {
+              const hour = 8 + i;
+              return `<tr><td>${hour}시</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`;
+            }).join("")
+          );
+        </script>
+      </tbody>
+    </table>
+
+    <div class="bottom-row">
+      <div class="checklist">
+        <h2>과목별 체크리스트</h2>
+        <ul>
+          <li>______________________________</li>
+          <li>______________________________</li>
+          <li>______________________________</li>
+          <li>______________________________</li>
+          <li>______________________________</li>
+          <li>______________________________</li>
+        </ul>
+      </div>
+      <div class="memo">
+        <h2>오늘의 한마디 / 메모</h2>
+        <div class="lines">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
