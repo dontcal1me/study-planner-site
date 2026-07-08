@@ -94,6 +94,13 @@ body {
   padding: 24px;
 }
 
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+
 .site-footer {
   border-top: 1px solid var(--color-border);
   margin-top: 60px;
@@ -126,5 +133,9 @@ body {
   .btn-primary {
     width: 100%;
     text-align: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 }
